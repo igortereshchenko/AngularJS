@@ -1,0 +1,41 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body >
+
+<!-- 
+An AngularJS module defines an application.
+The module is a container for the different parts of an application.
+The module is a container for the application controllers.
+Controllers always belong to a module. -->
+
+<div id="App1" ng-app="myApp" ng-controller="myCtrl" >
+	<p>{{ firstName + " " + lastName }}</p>
+</div>
+
+
+<div id="App2" ng-app="myApp2" ng-controller="myCtrl2" >
+	<p>{{ firstName2 + " " + lastName2 }}</p>
+</div>
+
+
+<script>
+
+var app = angular.module("myApp", []);
+
+app.controller("myCtrl", function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+</script>
+
+<script src="myApp2.js"></script>
+<script src="myCtrl2.js"></script>
+
+<script>
+	angular.bootstrap(document.getElementById("App2"),['myApp2']);
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="">
+
+
+
+<div  ng-init="color='lightblue'">
+	<input style="background-color:{{color}}" ng-model="color" value="{{color}}">
+</div>
+
+<!-- few number variables -->
+<div ng-init="quantity=1;cost=5">
+	<p>Total in dollar: {{ quantity * cost }}</p>
+	
+	<p>Binding: Total in dollar: <span ng-bind="quantity * cost"></span></p>
+</div>
+
+<!-- few text variables -->
+<div ng-init="firstName='John';lastName='Doe'" >
+
+	<p>The name is {{ firstName + " " + lastName }}</p>
+	
+	<p>Binding: The name is  <span ng-bind="firstName + " " + lastName"></span></p>
+	
+</div>
+
+<!-- AngularJS objects are like JavaScript objects: -->
+<div  ng-init="person={firstName:'John',lastName:'Doe'}">
+	<p>The name is {{ person.lastName }}</p>
+	<p>Binding: The name is <span ng-bind="person.lastName"></span></p>
+</div>
+
+<!-- AngularJS arrays are like JavaScript arrays: -->
+<div ng-init="points=[1,15,19,2,40]">
+
+	<p>The third result is {{ points[2] }}</p>
+	<p>Binding: The third result is <span ng-bind="points[2]"></span></p>
+
+</div>
+
+AngularJS expressions do not support conditionals, loops, and exceptions, while JavaScript expressions do.
+
+</body>
+</html>
